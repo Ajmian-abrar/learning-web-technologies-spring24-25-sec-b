@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <script>
+        function validateEmail() {
+            let email = document.getElementById("email").value;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailPattern.test(email)) {
+                alert("Invalid Email: Must be in format anything@example.com.");
+                return false;
+            }
+            return true;
+        }
+        
+        function showHint() {
+            alert("Hint: sample@example.com");
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateEmail()">
+        Email: <input type="email" id="email" name="email">
+        <button type="button" onclick="showHint()">i</button><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degree Validation</title>
+    <script>
+        function validateDegree() {
+            let degree = document.getElementsByName("degree");
+            if (![...degree].some(d => d.checked)) {
+                alert("Please select at least one degree.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+    <legend>Degree</legend>
+    <form onsubmit="return validateDegree()">
+        Degree:
+        <input type="checkbox" name="degree" value="BSc"> BSc
+        <input type="checkbox" name="degree" value="MSc"> MSc
+        <input type="checkbox" name="degree" value="PhD"> PhD
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    </fieldset>
+</body>
+</html>
